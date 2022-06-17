@@ -1,0 +1,37 @@
+.buttons {
+border: 3px solid red;
+background-color: #000;
+color:white;
+width: 320px;
+text-align: center;
+font-size: 20px;
+
+}
+
+.buttons a{
+background-color: white;
+color: #000;
+text-decoration: none;
+}
+
+.random {
+height: 100px;
+width: 300px;
+background-color: yellow;
+text-align: center;
+margin: auto;
+
+}
+.random p{
+background-color: DodgerBlue;
+height: 50%;
+margin: auto;
+color: yellow;
+}
+.random a{
+color: DodgerBlue;
+text-decoration: none;
+}
+hr{
+border-top: 3px dashed red;
+}

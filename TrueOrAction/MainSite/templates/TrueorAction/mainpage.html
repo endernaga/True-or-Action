@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello world</title>
+    <link type="text/css" href="{% static 'mainsite/css/style.css' %}" rel="stylesheet">
+</head>
+<body style="background-color: #5D8AA8">
+
+<!-- minemenu !-->
+<div style="background-color: #ccc">
+    <table style="margin: auto;">
+        <tr style="width: 100%">
+        {% if type == 0 %}
+            <td class="buttons">Головна</td>
+        {% else %}
+            <td class="buttons"><a href="{% url 'main' %}">Головна</a></td>
+        {% endif %}
+        {% for cats in category %}
+            {% if cats.pk == type %}
+                <td class="buttons"> {{ cats.type }}</td>
+            {% else %}
+                <td class="buttons"><a href="{{cats.get_absolute_url}}">{{cats.type}}</a></td>
+            {% endif %}
+        {% endfor %}
+        </tr>
+
+    </table>
+</div>
+<hr>
+<div class='random'>
+    <p>{{ random_action.name}}</p>
+    <a href="">Змінити рандомну подію</a>
+</div>
+<div>
+    {% if type == 0 %}
+    <table>
+        <tr>
+            {% for cat in category %}
+            <th>
+                {{ cat.type }}
+            </th>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for tabel in tables %}
+            {% for tab in tabel %}
+            <td>
+                {{ tab }}
+            </td>
+            {% endfor %}
+            {% endfor %}
+        </tr>
+    </table>
+    {% endif %}
+</div>
+</body>
+</html>
